@@ -36,8 +36,8 @@ int BigNum::getSign() const{
 }
 
 int BigNum::compareByModule(const BigNum& b) const{
-    if (length()>b.length()) return 1; //перше більше
-    if (length()<b.length()) return -1; //друге більше
+    if (length()>b.length()) return 1; 
+    if (length()<b.length()) return -1; 
     int i = length();
     while (i > 0 && digits[i-1] == b.digits[i-1])
         i--;
@@ -179,7 +179,7 @@ const BigNum operator*(const BigNum& a, const BigNum& b){
             res.digits[i+j] += d%10;
             res.digits[i+j+1] += d/10;
             int k = i+j;
-            while (k < i+j+1 || res.digits[k]>=10){ // нормальна умова???
+            while (k < i+j+1 || res.digits[k]>=10){ // Г­Г®Г°Г¬Г Г«ГјГ­Г  ГіГ¬Г®ГўГ ???
                 res.digits[k+1] += res.digits[k]/10;
                 res.digits[k] %= 10;
                 k++;
